@@ -1,11 +1,11 @@
-import logo from "./logo.svg";
-import "./App.css";
-import SignIn from "./Lucky/SignIn";
+import React from "react";
+import OverView from "./Goodluck/OverView";
+import UserOverview from "./Goodluck/UserOverview";
 
 function App() {
   return (
-    <div className="App">
-      <SignIn />
+    <div>
+      <UserOverview />
     </div>
   );
 }
