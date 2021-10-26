@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { app } from "./base";
 import firebase from "firebase";
 
-const UserOverview = () => {
+const AdminMember = () => {
   const [data, setData] = useState("");
 
   const getData = () => {
@@ -28,7 +28,7 @@ const UserOverview = () => {
     getData();
   }, []);
 
-  return <div>UserOverview</div>;
+  return <div>AdminMember</div>;
 };
 
-export default UserOverview;
+export default AdminMember;
