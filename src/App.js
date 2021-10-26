@@ -1,12 +1,16 @@
-import logo from "./logo.svg";
-import "./App.css";
-import SignIn from "./Lucky/SignIn";
+import React from "react";
+import SignIn from "./Goodluck/SignIn";
+import AdminSignIn from "./Goodluck/AdminSignIn";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <SignIn />
-    </div>
+    <BrowserRouter>
+      <Switch>
+        <Route exact path="/" component={SignIn} />
+        <Route exact path="/admin" component={AdminSignIn} />
+      </Switch>
+    </BrowserRouter>
   );
 }
 

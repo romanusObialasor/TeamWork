@@ -1,11 +1,19 @@
 import React, { useState, useEffect } from "react";
-import useHistory from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { app } from "./base";
 
-const SignIn = () => {
+const AdminSignIn = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [ckey, setCkey] = useState("");
+  const history = useHistory();
+
+  const AdminSignIn = async () => {
+    await app.auth().signInWithEmailAndPassword(email, password);
+    setEmail("");
+    setPassword("");
+    history.push("/admin");
+  };
+
   return (
     <div>
       <div
@@ -31,18 +39,10 @@ const SignIn = () => {
             setPassword(e.target.value);
           }}
         />
-        <input
-          type="text"
-          placeholder="Company's key"
-          value={ckey}
-          onChange={(e) => {
-            setCkey(e.target.value);
-          }}
-        />
-        <button>Sign In</button>
+        <button onClick={AdminSignIn}>Sign In</button>
       </div>
     </div>
   );
 };
 
-export default SignIn;
+export default AdminSignIn;
